@@ -20,5 +20,8 @@
   },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules jest --config=test/config.json --watch"
+  },
+  "devDependencies": {
+    "jest": "29.7.0"
   }
 }
