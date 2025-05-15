@@ -114,6 +114,22 @@ test("Custom units and unitless", () => {
 });
 
 
+test("currency units", () => {
+  let m = new Model();
+
+  let variable = m.Variable({
+    name: "Variable"
+  });
+
+
+  variable.value = "1";
+  variable.units = "£";
+
+  let res = m.simulate();
+  expect(res.value(variable)).toBe(1);
+});
+
+
 test("Comments", () => {
 
   check("2+2#abc", 4);
@@ -138,9 +154,9 @@ end if
 `, 4);
 
   check(`if true
-  
+
   then
-  
+
 4
 //abc
 end if
@@ -324,7 +340,7 @@ test("Misc", () => {
 
   check("2*3/2", 3);
   check("2*3/4", 1.5);
-  
+
   check("\n\n2+2", 4);
   check("2+2\n\n", 4);
   check("\n\n2+2\n\n", 4);
@@ -578,7 +594,7 @@ test("Misc", () => {
 
 
   failure("function a(x)\naVal <- 10\nb(x)\nend function\nfunction b(x)\nx+aVal\nend Function\na(2)");
-  
+
   testConfig.globals = "";
 });
 

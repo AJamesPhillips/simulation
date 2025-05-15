@@ -509,45 +509,45 @@ const sharedContextCache = new antlr4.atn.PredictionContextCache();
 
 export default class FormulaParser extends antlr4.Parser {
 
-    static grammarFileName = "Formula.g";
-    static literalNames = [ null, "'('", "','", "')'", "'<-'", "':'", "'!'", 
-                            "'not'", "'.'", null, null, null, null, null, 
-                            "'while'", "'for'", "'from'", "'in'", "'to'", 
-                            "'by'", "'loop'", "'if'", "'then'", "'else'", 
-                            "'function'", "'end'", "'return'", "'new'", 
-                            "'try'", "'catch'", "'throw'", null, "'xor'", 
-                            null, null, null, "'<'", "'<='", "'>'", "'>='", 
-                            "'+'", "'-'", "'*'", "'/'", null, "'^'", null, 
-                            null, "'{'", "'}'", null, null, null, "'per'", 
+    static grammarFileName = "Formula.g4";
+    static literalNames = [ null, "'('", "','", "')'", "'<-'", "':'", "'!'",
+                            "'not'", "'.'", null, null, null, null, null,
+                            "'while'", "'for'", "'from'", "'in'", "'to'",
+                            "'by'", "'loop'", "'if'", "'then'", "'else'",
+                            "'function'", "'end'", "'return'", "'new'",
+                            "'try'", "'catch'", "'throw'", null, "'xor'",
+                            null, null, null, "'<'", "'<='", "'>'", "'>='",
+                            "'+'", "'-'", "'*'", "'/'", null, "'^'", null,
+                            null, "'{'", "'}'", null, null, null, "'per'",
                             "'squared'", "'cubed'", null, null, "'['", "']'" ];
-    static symbolicNames = [ null, null, null, null, null, null, null, null, 
-                             null, "COMMENT", "LINE_COMMENT", "R__", "R_", 
-                             "NEWLINES", "WHILESTATEMENT", "FORSTATEMENT", 
-                             "FROMSTATEMENT", "INSTATEMENT", "TOSTATEMENT", 
-                             "BYSTATEMENT", "LOOPSTATEMENT", "IFSTATEMENT", 
-                             "THENSTATEMENT", "ELSESTATEMENT", "FUNCTIONSTATEMENT", 
-                             "ENDBLOCK", "RETURNSTATEMENT", "NEWSTATEMENT", 
-                             "TRYSTATEMENT", "CATCHSTATEMENT", "THROWSTATEMENT", 
-                             "OR", "XOR", "AND", "EQUALS", "NOTEQUALS", 
-                             "LT", "LTEQ", "GT", "GTEQ", "PLUS", "MINUS", 
-                             "MULT", "DIV", "MOD", "POW", "LARR", "RARR", 
-                             "LCURL", "RCURL", "INTEGER", "FLOAT", "BOOL", 
-                             "PER", "SQUARED", "CUBED", "IDENT", "PRIMITIVE", 
+    static symbolicNames = [ null, null, null, null, null, null, null, null,
+                             null, "COMMENT", "LINE_COMMENT", "R__", "R_",
+                             "NEWLINES", "WHILESTATEMENT", "FORSTATEMENT",
+                             "FROMSTATEMENT", "INSTATEMENT", "TOSTATEMENT",
+                             "BYSTATEMENT", "LOOPSTATEMENT", "IFSTATEMENT",
+                             "THENSTATEMENT", "ELSESTATEMENT", "FUNCTIONSTATEMENT",
+                             "ENDBLOCK", "RETURNSTATEMENT", "NEWSTATEMENT",
+                             "TRYSTATEMENT", "CATCHSTATEMENT", "THROWSTATEMENT",
+                             "OR", "XOR", "AND", "EQUALS", "NOTEQUALS",
+                             "LT", "LTEQ", "GT", "GTEQ", "PLUS", "MINUS",
+                             "MULT", "DIV", "MOD", "POW", "LARR", "RARR",
+                             "LCURL", "RCURL", "INTEGER", "FLOAT", "BOOL",
+                             "PER", "SQUARED", "CUBED", "IDENT", "PRIMITIVE",
                              "LBRACKET", "RBRACKET", "SPACE", "STRING" ];
-    static ruleNames = [ "lines", "expression", "returnExp", "innerBlock", 
-                         "whileLoop", "forLoop", "forInLoop", "ifThenElse", 
-                         "functionDef", "tryCatch", "throwExp", "anonFunctionDef", 
-                         "assignment", "assigned", "logicalExpression", 
-                         "booleanXORExpression", "booleanAndExpression", 
-                         "equalityExpression", "relationalExpression", "additiveExpression", 
-                         "multiplicativeExpression", "arrayExpression", 
-                         "negationExpression", "powerExpression", "unaryOrNegate", 
-                         "unaryExpression", "innerPrimaryExpression", "selectionExpression", 
-                         "funCall", "primaryExpression", "value", "material", 
-                         "array", "newObject", "defaultValue", "selector", 
-                         "minarray", "dotselector", "arrayName", "label", 
-                         "number", "negnumber", "unitMultiplicativeExpression", 
-                         "unitInnerMultiplicativeExpression", "unitClump", 
+    static ruleNames = [ "lines", "expression", "returnExp", "innerBlock",
+                         "whileLoop", "forLoop", "forInLoop", "ifThenElse",
+                         "functionDef", "tryCatch", "throwExp", "anonFunctionDef",
+                         "assignment", "assigned", "logicalExpression",
+                         "booleanXORExpression", "booleanAndExpression",
+                         "equalityExpression", "relationalExpression", "additiveExpression",
+                         "multiplicativeExpression", "arrayExpression",
+                         "negationExpression", "powerExpression", "unaryOrNegate",
+                         "unaryExpression", "innerPrimaryExpression", "selectionExpression",
+                         "funCall", "primaryExpression", "value", "material",
+                         "array", "newObject", "defaultValue", "selector",
+                         "minarray", "dotselector", "arrayName", "label",
+                         "number", "negnumber", "unitMultiplicativeExpression",
+                         "unitInnerMultiplicativeExpression", "unitClump",
                          "unitPowerExpression", "unit", "string" ];
 
     constructor(input) {
@@ -594,18 +594,18 @@ export default class FormulaParser extends antlr4.Parser {
 	            var _alt = this._interp.adaptivePredict(this._input,2,this._ctx)
 	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	                if(_alt===1) {
-	                    this.state = 104; 
+	                    this.state = 104;
 	                    this._errHandler.sync(this);
 	                    _la = this._input.LA(1);
 	                    do {
 	                        this.state = 103;
 	                        this.match(FormulaParser.R__);
-	                        this.state = 106; 
+	                        this.state = 106;
 	                        this._errHandler.sync(this);
 	                        _la = this._input.LA(1);
 	                    } while(_la===11);
 	                    this.state = 108;
-	                    this.expression(); 
+	                    this.expression();
 	                }
 	                this.state = 113;
 	                this._errHandler.sync(this);
@@ -790,7 +790,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
-	                } 
+	                }
 	            }
 	            this.state = 150;
 	            this._errHandler.sync(this);
@@ -808,18 +808,18 @@ export default class FormulaParser extends antlr4.Parser {
 	            var _alt = this._interp.adaptivePredict(this._input,9,this._ctx)
 	            while(_alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER) {
 	                if(_alt===1) {
-	                    this.state = 153; 
+	                    this.state = 153;
 	                    this._errHandler.sync(this);
 	                    _la = this._input.LA(1);
 	                    do {
 	                        this.state = 152;
 	                        this.match(FormulaParser.R__);
-	                        this.state = 155; 
+	                        this.state = 155;
 	                        this._errHandler.sync(this);
 	                        _la = this._input.LA(1);
 	                    } while(_la===11);
 	                    this.state = 157;
-	                    this.expression(); 
+	                    this.expression();
 	                }
 	                this.state = 162;
 	                this._errHandler.sync(this);
@@ -839,7 +839,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    else {
 	                    	this._errHandler.reportMatch(this);
 	                        this.consume();
-	                    } 
+	                    }
 	                }
 	                this.state = 168;
 	                this._errHandler.sync(this);
@@ -1132,7 +1132,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
-	                } 
+	                }
 	            }
 	            this.state = 272;
 	            this._errHandler.sync(this);
@@ -1197,7 +1197,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        else {
 	                        	this._errHandler.reportMatch(this);
 	                            this.consume();
-	                        } 
+	                        }
 	                    }
 	                    this.state = 296;
 	                    this._errHandler.sync(this);
@@ -1221,7 +1221,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    this.state = 301;
 	                    this.innerBlock();
 
-	                } 
+	                }
 	            }
 	            this.state = 308;
 	            this._errHandler.sync(this);
@@ -1375,7 +1375,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                            _la = this._input.LA(1);
 	                        }
 	                        this.state = 366;
-	                        this.match(FormulaParser.IDENT); 
+	                        this.match(FormulaParser.IDENT);
 	                    }
 	                    this.state = 371;
 	                    this._errHandler.sync(this);
@@ -1440,7 +1440,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        _la = this._input.LA(1);
 	                    }
 	                    this.state = 401;
-	                    this.defaultValue(); 
+	                    this.defaultValue();
 	                }
 	                this.state = 406;
 	                this._errHandler.sync(this);
@@ -1681,7 +1681,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                            _la = this._input.LA(1);
 	                        }
 	                        this.state = 489;
-	                        this.match(FormulaParser.IDENT); 
+	                        this.match(FormulaParser.IDENT);
 	                    }
 	                    this.state = 494;
 	                    this._errHandler.sync(this);
@@ -1746,7 +1746,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        _la = this._input.LA(1);
 	                    }
 	                    this.state = 524;
-	                    this.defaultValue(); 
+	                    this.defaultValue();
 	                }
 	                this.state = 529;
 	                this._errHandler.sync(this);
@@ -1948,7 +1948,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                                _la = this._input.LA(1);
 	                            }
 	                            this.state = 598;
-	                            this.match(FormulaParser.IDENT); 
+	                            this.match(FormulaParser.IDENT);
 	                        }
 	                        this.state = 603;
 	                        this._errHandler.sync(this);
@@ -2107,7 +2107,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        break;
 	                    default:
 	                        throw new antlr4.error.NoViableAltException(this);
-	                    } 
+	                    }
 	                }
 	                this.state = 681;
 	                this._errHandler.sync(this);
@@ -2227,7 +2227,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 716;
-	                this.booleanXORExpression(); 
+	                this.booleanXORExpression();
 	            }
 	            this.state = 721;
 	            this._errHandler.sync(this);
@@ -2287,7 +2287,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 736;
-	                this.booleanAndExpression(); 
+	                this.booleanAndExpression();
 	            }
 	            this.state = 741;
 	            this._errHandler.sync(this);
@@ -2347,7 +2347,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 756;
-	                this.equalityExpression(); 
+	                this.equalityExpression();
 	            }
 	            this.state = 761;
 	            this._errHandler.sync(this);
@@ -2414,7 +2414,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 776;
-	                this.relationalExpression(); 
+	                this.relationalExpression();
 	            }
 	            this.state = 781;
 	            this._errHandler.sync(this);
@@ -2481,7 +2481,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 796;
-	                this.additiveExpression(); 
+	                this.additiveExpression();
 	            }
 	            this.state = 801;
 	            this._errHandler.sync(this);
@@ -2548,7 +2548,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 816;
-	                this.multiplicativeExpression(); 
+	                this.multiplicativeExpression();
 	            }
 	            this.state = 821;
 	            this._errHandler.sync(this);
@@ -2615,7 +2615,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 836;
-	                this.arrayExpression(); 
+	                this.arrayExpression();
 	            }
 	            this.state = 841;
 	            this._errHandler.sync(this);
@@ -2780,7 +2780,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 876;
-	                this.unaryOrNegate(); 
+	                this.unaryOrNegate();
 	            }
 	            this.state = 881;
 	            this._errHandler.sync(this);
@@ -2983,7 +2983,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    break;
 	                default:
 	                    throw new antlr4.error.NoViableAltException(this);
-	                } 
+	                }
 	            }
 	            this.state = 913;
 	            this._errHandler.sync(this);
@@ -3059,7 +3059,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        _la = this._input.LA(1);
 	                    }
 	                    this.state = 935;
-	                    this.logicalExpression(); 
+	                    this.logicalExpression();
 	                }
 	                this.state = 940;
 	                this._errHandler.sync(this);
@@ -3395,7 +3395,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                            _la = this._input.LA(1);
 	                        }
 	                        this.state = 1020;
-	                        this.label(); 
+	                        this.label();
 	                    }
 	                    this.state = 1025;
 	                    this._errHandler.sync(this);
@@ -3496,7 +3496,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                            _la = this._input.LA(1);
 	                        }
 	                        this.state = 1056;
-	                        this.label(); 
+	                        this.label();
 	                    }
 	                    this.state = 1061;
 	                    this._errHandler.sync(this);
@@ -3597,7 +3597,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                            _la = this._input.LA(1);
 	                        }
 	                        this.state = 1092;
-	                        this.logicalExpression(); 
+	                        this.logicalExpression();
 	                    }
 	                    this.state = 1097;
 	                    this._errHandler.sync(this);
@@ -3698,7 +3698,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                            _la = this._input.LA(1);
 	                        }
 	                        this.state = 1128;
-	                        this.logicalExpression(); 
+	                        this.logicalExpression();
 	                    }
 	                    this.state = 1133;
 	                    this._errHandler.sync(this);
@@ -3974,7 +3974,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        break;
 	                    default:
 	                        throw new antlr4.error.NoViableAltException(this);
-	                    } 
+	                    }
 	                }
 	                this.state = 1194;
 	                this._errHandler.sync(this);
@@ -4090,7 +4090,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                        break;
 	                    default:
 	                        throw new antlr4.error.NoViableAltException(this);
-	                    } 
+	                    }
 	                }
 	                this.state = 1234;
 	                this._errHandler.sync(this);
@@ -4134,7 +4134,7 @@ export default class FormulaParser extends antlr4.Parser {
 	    this.enterRule(localctx, 74, FormulaParser.RULE_dotselector);
 	    try {
 	        this.enterOuterAlt(localctx, 1);
-	        this.state = 1246; 
+	        this.state = 1246;
 	        this._errHandler.sync(this);
 	        var _alt = 1;
 	        do {
@@ -4148,7 +4148,7 @@ export default class FormulaParser extends antlr4.Parser {
 	        	default:
 	        		throw new antlr4.error.NoViableAltException(this);
 	        	}
-	        	this.state = 1248; 
+	        	this.state = 1248;
 	        	this._errHandler.sync(this);
 	        	_alt = this._interp.adaptivePredict(this._input,183, this._ctx);
 	        } while ( _alt!=2 && _alt!=antlr4.atn.ATN.INVALID_ALT_NUMBER );
@@ -4338,7 +4338,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                this.state = 1276;
 	                this.match(FormulaParser.R_);
 	                this.state = 1277;
-	                this.unitInnerMultiplicativeExpression(); 
+	                this.unitInnerMultiplicativeExpression();
 	            }
 	            this.state = 1282;
 	            this._errHandler.sync(this);
@@ -4405,7 +4405,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    _la = this._input.LA(1);
 	                }
 	                this.state = 1297;
-	                this.unitClump(); 
+	                this.unitClump();
 	            }
 	            this.state = 1302;
 	            this._errHandler.sync(this);
@@ -4594,7 +4594,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                else {
 	                	this._errHandler.reportMatch(this);
 	                    this.consume();
-	                } 
+	                }
 	            }
 	            this.state = 1366;
 	            this._errHandler.sync(this);
@@ -4637,7 +4637,7 @@ export default class FormulaParser extends antlr4.Parser {
 	                    this.state = 1368;
 	                    this.match(FormulaParser.R_);
 	                    this.state = 1369;
-	                    this.match(FormulaParser.IDENT); 
+	                    this.match(FormulaParser.IDENT);
 	                }
 	                this.state = 1374;
 	                this._errHandler.sync(this);
@@ -7464,51 +7464,51 @@ class StringContext extends antlr4.ParserRuleContext {
 
 
 
-FormulaParser.LinesContext = LinesContext; 
-FormulaParser.ExpressionContext = ExpressionContext; 
-FormulaParser.ReturnExpContext = ReturnExpContext; 
-FormulaParser.InnerBlockContext = InnerBlockContext; 
-FormulaParser.WhileLoopContext = WhileLoopContext; 
-FormulaParser.ForLoopContext = ForLoopContext; 
-FormulaParser.ForInLoopContext = ForInLoopContext; 
-FormulaParser.IfThenElseContext = IfThenElseContext; 
-FormulaParser.FunctionDefContext = FunctionDefContext; 
-FormulaParser.TryCatchContext = TryCatchContext; 
-FormulaParser.ThrowExpContext = ThrowExpContext; 
-FormulaParser.AnonFunctionDefContext = AnonFunctionDefContext; 
-FormulaParser.AssignmentContext = AssignmentContext; 
-FormulaParser.AssignedContext = AssignedContext; 
-FormulaParser.LogicalExpressionContext = LogicalExpressionContext; 
-FormulaParser.BooleanXORExpressionContext = BooleanXORExpressionContext; 
-FormulaParser.BooleanAndExpressionContext = BooleanAndExpressionContext; 
-FormulaParser.EqualityExpressionContext = EqualityExpressionContext; 
-FormulaParser.RelationalExpressionContext = RelationalExpressionContext; 
-FormulaParser.AdditiveExpressionContext = AdditiveExpressionContext; 
-FormulaParser.MultiplicativeExpressionContext = MultiplicativeExpressionContext; 
-FormulaParser.ArrayExpressionContext = ArrayExpressionContext; 
-FormulaParser.NegationExpressionContext = NegationExpressionContext; 
-FormulaParser.PowerExpressionContext = PowerExpressionContext; 
-FormulaParser.UnaryOrNegateContext = UnaryOrNegateContext; 
-FormulaParser.UnaryExpressionContext = UnaryExpressionContext; 
-FormulaParser.InnerPrimaryExpressionContext = InnerPrimaryExpressionContext; 
-FormulaParser.SelectionExpressionContext = SelectionExpressionContext; 
-FormulaParser.FunCallContext = FunCallContext; 
-FormulaParser.PrimaryExpressionContext = PrimaryExpressionContext; 
-FormulaParser.ValueContext = ValueContext; 
-FormulaParser.MaterialContext = MaterialContext; 
-FormulaParser.ArrayContext = ArrayContext; 
-FormulaParser.NewObjectContext = NewObjectContext; 
-FormulaParser.DefaultValueContext = DefaultValueContext; 
-FormulaParser.SelectorContext = SelectorContext; 
-FormulaParser.MinarrayContext = MinarrayContext; 
-FormulaParser.DotselectorContext = DotselectorContext; 
-FormulaParser.ArrayNameContext = ArrayNameContext; 
-FormulaParser.LabelContext = LabelContext; 
-FormulaParser.NumberContext = NumberContext; 
-FormulaParser.NegnumberContext = NegnumberContext; 
-FormulaParser.UnitMultiplicativeExpressionContext = UnitMultiplicativeExpressionContext; 
-FormulaParser.UnitInnerMultiplicativeExpressionContext = UnitInnerMultiplicativeExpressionContext; 
-FormulaParser.UnitClumpContext = UnitClumpContext; 
-FormulaParser.UnitPowerExpressionContext = UnitPowerExpressionContext; 
-FormulaParser.UnitContext = UnitContext; 
-FormulaParser.StringContext = StringContext; 
+FormulaParser.LinesContext = LinesContext;
+FormulaParser.ExpressionContext = ExpressionContext;
+FormulaParser.ReturnExpContext = ReturnExpContext;
+FormulaParser.InnerBlockContext = InnerBlockContext;
+FormulaParser.WhileLoopContext = WhileLoopContext;
+FormulaParser.ForLoopContext = ForLoopContext;
+FormulaParser.ForInLoopContext = ForInLoopContext;
+FormulaParser.IfThenElseContext = IfThenElseContext;
+FormulaParser.FunctionDefContext = FunctionDefContext;
+FormulaParser.TryCatchContext = TryCatchContext;
+FormulaParser.ThrowExpContext = ThrowExpContext;
+FormulaParser.AnonFunctionDefContext = AnonFunctionDefContext;
+FormulaParser.AssignmentContext = AssignmentContext;
+FormulaParser.AssignedContext = AssignedContext;
+FormulaParser.LogicalExpressionContext = LogicalExpressionContext;
+FormulaParser.BooleanXORExpressionContext = BooleanXORExpressionContext;
+FormulaParser.BooleanAndExpressionContext = BooleanAndExpressionContext;
+FormulaParser.EqualityExpressionContext = EqualityExpressionContext;
+FormulaParser.RelationalExpressionContext = RelationalExpressionContext;
+FormulaParser.AdditiveExpressionContext = AdditiveExpressionContext;
+FormulaParser.MultiplicativeExpressionContext = MultiplicativeExpressionContext;
+FormulaParser.ArrayExpressionContext = ArrayExpressionContext;
+FormulaParser.NegationExpressionContext = NegationExpressionContext;
+FormulaParser.PowerExpressionContext = PowerExpressionContext;
+FormulaParser.UnaryOrNegateContext = UnaryOrNegateContext;
+FormulaParser.UnaryExpressionContext = UnaryExpressionContext;
+FormulaParser.InnerPrimaryExpressionContext = InnerPrimaryExpressionContext;
+FormulaParser.SelectionExpressionContext = SelectionExpressionContext;
+FormulaParser.FunCallContext = FunCallContext;
+FormulaParser.PrimaryExpressionContext = PrimaryExpressionContext;
+FormulaParser.ValueContext = ValueContext;
+FormulaParser.MaterialContext = MaterialContext;
+FormulaParser.ArrayContext = ArrayContext;
+FormulaParser.NewObjectContext = NewObjectContext;
+FormulaParser.DefaultValueContext = DefaultValueContext;
+FormulaParser.SelectorContext = SelectorContext;
+FormulaParser.MinarrayContext = MinarrayContext;
+FormulaParser.DotselectorContext = DotselectorContext;
+FormulaParser.ArrayNameContext = ArrayNameContext;
+FormulaParser.LabelContext = LabelContext;
+FormulaParser.NumberContext = NumberContext;
+FormulaParser.NegnumberContext = NegnumberContext;
+FormulaParser.UnitMultiplicativeExpressionContext = UnitMultiplicativeExpressionContext;
+FormulaParser.UnitInnerMultiplicativeExpressionContext = UnitInnerMultiplicativeExpressionContext;
+FormulaParser.UnitClumpContext = UnitClumpContext;
+FormulaParser.UnitPowerExpressionContext = UnitPowerExpressionContext;
+FormulaParser.UnitContext = UnitContext;
+FormulaParser.StringContext = StringContext;

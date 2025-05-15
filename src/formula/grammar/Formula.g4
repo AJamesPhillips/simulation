@@ -334,7 +334,16 @@ unit:
 	IDENT (R_ IDENT)*
 	| '(' (R_*) unitMultiplicativeExpression (R_*) ')';
 
-IDENT: ('a' .. 'z') ('a' .. 'z' | '_' | '0' .. '9')*;
+// From: https://github.com/AJamesPhillips/DataCurator/blob/a7e1aaa/app/frontend/src/calculations/hide_currency_symbols.ts#L2-L37
+fragment CURRENCY_SYMBOLS:
+    '£' | '$' | '€' | '¥' | 'Ұ' | '₹' | '₨' | '¢' | '؋'
+    | '฿' | '៛' | '₡' | '₦' | '₩' | '₪' | '₫' | '₭' | '₮'
+    | '₱' | '₴' | '₼' | '₽' | '﷼' | 'ƒ' | 'Kč' | 'zł'
+    | 'ден' | 'Дин' | 'лв' | '₺';
+
+IDENT:
+    ('a' .. 'z') ('a' .. 'z' | '_' | '0' .. '9')*
+    | CURRENCY_SYMBOLS;
 
 PRIMITIVE:
 	LBRACKET (~('[' | ']'))+? RBRACKET
